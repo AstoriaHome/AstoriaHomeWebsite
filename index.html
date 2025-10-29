@@ -37,7 +37,7 @@ async function renderProjects(){
     const data = await res.json();
     const wrap = document.getElementById('cards');
     if(!data.items || data.items.length===0){
-      wrap.innerHTML = '<p>Noch keine Angebote – füge Objekte im Admin-Bereich hinzu.</p>';
+      wrap.innerHTML = '<p>Wird aktualisiert.</p>';
       return;
     }
     wrap.innerHTML = data.items.map(item => `
