@@ -1,51 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nachricht gesendet</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/styles.css">
   <style>
     body {
-      background: #f7f7f7;
+      background-color: #f7f7f7;
       font-family: Arial, sans-serif;
-      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
       text-align: center;
-      padding: 50px;
     }
-    .thanks {
-      max-width: 600px;
-      margin: 10vh auto;
-      padding: 2rem;
-      background: #fff;
+    .box {
+      background: white;
+      padding: 2rem 3rem;
       border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,.1);
     }
-    .thanks h2 {
-      margin-bottom: 0.5rem;
-      font-size: 1.8rem;
+    h1 {
+      margin-bottom: 1rem;
     }
-    .thanks p {
-      margin-bottom: 1.5rem;
-    }
-    .btn {
+    a {
       display: inline-block;
-      padding: 0.9rem 1.5rem;
-      border-radius: 10px;
-      background: #000;
-      color: #fff;
+      margin-top: 1.5rem;
       text-decoration: none;
+      background: black;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
     }
-    .btn:hover {
-      background: #444;
+    a:hover {
+      background: #333;
     }
   </style>
 </head>
 <body>
-  <div class="thanks">
-    <h2>Danke für deine Nachricht!</h2>
+  <div class="box">
+    <h1>Danke für deine Nachricht!</h1>
     <p>Wir melden uns so schnell wie möglich.</p>
-    <a class="btn" href="/">Zurück zur Startseite</a>
+    <a href="/">Zurück zur Startseite</a>
   </div>
 </body>
 </html>
