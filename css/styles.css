@@ -21,3 +21,11 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
 .btn{background:#000;color:#fff;border:none;border-radius:6px;padding:12px 22px;font-size:16px;text-decoration:none}
 footer{background:#111;color:#fff;text-align:center;padding:18px;margin-top:80px;font-size:14px}
 @media (max-width:900px){ .grid{grid-template-columns:1fr} .brand{font-size:22px} .hero h1{font-size:40px} }
+/* --- Fix Kontaktformular Layout --- */
+.contact-card { max-width: 640px; margin: 2rem auto; padding: 1.5rem; background:#fff; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,.08); }
+.form-row { display:flex; flex-direction:column; gap:.4rem; margin-bottom:1rem; }
+.form-row label { margin:0; font-weight:600; }
+.form-row input, .form-row textarea { display:block; width:100%; box-sizing:border-box; padding:.7rem .9rem; border:1px solid #ddd; border-radius:8px; font:inherit; background:#fff; }
+.form-row input:focus, .form-row textarea:focus { border-color:#999; box-shadow:0 0 0 3px rgba(0,0,0,.06); outline:none; }
+.cta { padding: 0 1rem; } /* etwas Innenabstand links/rechts */
+.contact-card .btn { width:100%; padding:.9rem 1rem; border-radius:10px; }
