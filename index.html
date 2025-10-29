@@ -23,7 +23,32 @@
   <section class="section">
     <h2>Aktuelle Angebote</h2>
     <div id="cards" class="grid"></div>
-    <div class="cta"><a class="btn" href="mailto:ag@astoriahome.ch?subject=Kostenlose%20Erstberatung">Kontakt</a></div>
+    <div class="cta">
+  <h3>Kontaktformular</h3>
+  <form name="Kontaktformular" method="POST" data-netlify="true" action="/success.html">
+    <input type="hidden" name="form-name" value="Kontaktformular">
+
+    <p>
+      <label>Name:<br>
+        <input type="text" name="name" required>
+      </label>
+    </p>
+    <p>
+      <label>E-Mail:<br>
+        <input type="email" name="email" required>
+      </label>
+    </p>
+    <p>
+      <label>Nachricht:<br>
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+    </p>
+    <p>
+      <button type="submit" class="btn">Nachricht senden</button>
+    </p>
+  </form>
+</div>
+
   </section>
 
   <footer>
