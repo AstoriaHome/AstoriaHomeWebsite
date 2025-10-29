@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "projekte"
+    label: "Projekte"
+    label_singular: "Projekt"
+    files:
+      - file: "data/projekte.json"
+        name: "liste"
+        label: "Projektliste"
+        description: "Füge deine Immobilien hinzu"
+        fields:
+          - label: "Projekte"
+            name: "items"
+            widget: list
+            summary: "{{fields.titel}} ({{fields.ort}})"
+            fields:
+              - {label: "Titel", name: "titel", widget: "string"}
+              - {label: "Ort", name: "ort", widget: "string"}
+              - {label: "Preis (Text)", name: "preis", widget: "string", required: false, hint: "z. B. CHF 1’290’000.–"}
+              - {label: "Zimmer", name: "zimmer", widget: "number", required: false}
+              - {label: "Fläche (m²)", name: "flaeche", widget: "number", required: false}
+              - {label: "Bild", name: "bild", widget: "image", required: false}
+              - {label: "Kurzbeschreibung", name: "beschreibung", widget: "text", required: false}

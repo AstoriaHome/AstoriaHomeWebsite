@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASTORIA HOME · Real Estate</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">ASTORIA HOME</div>
+    <div class="contact">
+      📞 <a href="tel:+41797556845">+41 79 755 68 45</a> · ✉️ <a href="mailto:ag@astoriahome.ch">ag@astoriahome.ch</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>ASTORIA HOME</h1>
+    <div class="sub">Real Estate</div>
+    <div class="claim">„Vertrauen. Kompetenz. Heimat.“</div>
+  </section>
+
+  <section class="section">
+    <h2>Aktuelle Angebote</h2>
+    <div id="cards" class="grid"></div>
+    <div class="cta"><a class="btn" href="mailto:ag@astoriahome.ch?subject=Kostenlose%20Erstberatung">Kostenlose Erstberatung</a></div>
+  </section>
+
+  <footer>
+    © ASTORIA HOME Real Estate — Gotthardstrasse 25b, 6410 Goldau
+  </footer>
+
+<script>
+async function renderProjects(){
+  try{
+    const res = await fetch('data/projekte.json', {cache: 'no-store'});
+    const data = await res.json();
+    const wrap = document.getElementById('cards');
+    if(!data.items || data.items.length===0){
+      wrap.innerHTML = '<p>Noch keine Angebote – füge Objekte im Admin-Bereich hinzu.</p>';
+      return;
+    }
+    wrap.innerHTML = data.items.map(item => `
+      <article class="card">
+        ${item.bild ? `<img src="${item.bild}" alt="${item.titel || 'Objekt'}">` : ''}
+        <div class="p">
+          <h3>${item.titel || ''}</h3>
+          <div>${item.ort || ''} ${item.zimmer ? ' · ' + item.zimmer + '-Zimmer' : ''} ${item.flaeche ? ' · ' + item.flaeche + ' m²' : ''}</div>
+          ${item.preis ? `<div class="price">${item.preis}</div>` : ''}
+        </div>
+      </article>
+    `).join('');
+  }catch(e){
+    document.getElementById('cards').innerHTML = '<p>Fehler beim Laden der Angebote.</p>';
+  }
+}
+renderProjects();
+</script>
+</body>
+</html>
